@@ -1,0 +1,342 @@
+/* 颜色 */
+$t1: #433B28;
+$t2: #7A765D;
+$background: #FBFAF4;
+$red1: #FF7473;
+$yellow1: #FFC952;
+$blue1: #47B8E0;
+$purple1: #7451DF;
+$brown1: #5E553E;
+$white: #FFFFFF;
+
+/* 全局 */
+* {
+	fontfamily: Roboto, Arial, sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1; 	
+}
+
+body {
+	background-color: #FBFAF4;
+	
+}
+
+.clearfix:before, .clearfix:after {
+	content: " "; /* 旧版浏览器不支持空内容 */
+    display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+.wrapper {
+    width: 750px;
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+.top {
+	height: 28px;
+	background-repeat: no-repeat;
+	background-size: 20% 100%, 40% 100%, 60% 100%, 80% 100%, 100% 100%;
+	background-image:
+    linear-gradient($red1,$red1),
+    linear-gradient($yellow1, $yellow1),
+    linear-gradient($blue1, $blue1),
+    linear-gradient($purple1, $purple1),
+    linear-gradient($brown1, $brown1);
+	/*
+	background-image:
+	  linear-gradient(
+	  	to right,
+	  	$red1,
+	  	$red1 20%,
+	  	$yellow1 20%,
+	  	$yellow1 40%,
+	  	$blue1 40%,
+	  	$blue1 60%,
+	  	$purple1 60%,
+	  	$purple1 80%,
+	  	$brown1 80%,
+	  	$brown1 100%,);
+	  -webkit-background-size: 100%;
+	  -moz-background-size: 100%;
+	  background-size: 100%;
+    */
+}
+
+/* 头部 */
+.main_header {
+	margin: 40px 0 40px 0;
+	
+}
+
+.logo {
+	img {
+	    width: 120px;
+        float: left;
+	}
+	h1 {
+		float: left;
+		margin: 0; 
+		color: $t1;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 32px;
+		margin-top: 26px;
+	}
+}
+
+.nav {
+	margin-right: 8px;
+	margin-top: 32px;
+	float: right;
+	font-size:14px;
+    font-weight:400;
+    line-height:20px;
+    a {
+    	margin-right: 20px;
+    	color: $t2;
+    	text-decoration: none;
+    }
+    .pressed {
+        font-weight: 700;
+    	color: $t1;
+    }
+}
+
+/* 列表 */
+
+#timeline {
+	width: 100%;
+	position: relative;
+	list-style: none;
+	padding: -1;
+	&:after {
+		content: " ";
+		width:4px;
+        height:90%;
+        background:rgba(229,228,222,1);
+        z-index: 0;
+        position: absolute;
+        top: 40px;
+        left: 60px;
+	}
+	a {
+		text-decoration: none;
+	}
+	.listing {
+		
+		background: $white;
+		box-shadow: 0px 6px 12px 0px rgba(63,62,57,0.06);
+        border-radius: 8px;
+        padding: 28px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        display: table;
+        width: 100%;
+        img, .info, .job_type {
+        	display: table-cell;
+        	vertical-align: middle;
+        	font-size: 14px;  	
+        	color: $t2;
+        }
+        .images_wrapper {
+        	width: 64px;
+        	border-radius: 100%;
+        	background: $background;
+        	
+        	img {
+        		width: 64px;
+        		border-radius: 100%;
+        		display: block;               		
+        	}
+        }
+        .info {
+        	line-height: 20px;
+        	width: 10000px;
+        	padding-left: 28px;
+
+        	.job_title {
+        		color: $t1;
+        		font-size: 20px;
+        		line-height: 28px;
+        		font-weight: 500;
+        		letter-spacing: 1px;
+        	}
+        	.job_info {
+        		color: $t2;
+        		display: block;
+        		font-weight: 400;
+        		margin-top: 4px;
+        		.diagonal {
+        			margin: 0 16px;
+        		}
+        	}
+        }
+        .job_type {
+        	font-weight: 400;
+        	font-size: 14px;
+        	position: relative;
+        	white-space: nowrap;
+        	width: 54px;
+        	&:before {
+        		content: " ";
+        		background: $red1;
+        		width: 8px;
+        		height: 8px;
+        		border-radius: 100%;
+        		position: absolute;
+        		left: -20px;
+        		top: 28px;
+        	}
+        }
+        .full_time {
+        	color: $red1;
+        	&:before {
+        		background: $red1;
+        	}
+        }
+        .part_time {
+        	color: $blue1;
+        	&:before {
+        		background: $blue1;
+        	}
+        }
+        .freelance {
+        	color: $red1;
+        	&:before {
+        		background: $red1;
+        	}
+        }
+        .contract {
+        	color: $purple1;
+        	&:before {
+        		background: $purple1;
+        	}
+        }
+        transition: all .3s ease-in-out;
+        &:hover {
+        	cursor: pointer;
+        	box-shadow: 0px 12px 28px 0px rgba(63,62,57,0.1);
+        }
+	}
+}
+
+/* 列表 */
+.date {
+	margin: 40px 0 40px 28px;
+	background: $white;
+	border-radius: 100%;
+	text-align: center;
+	width:64px;
+    height:64px;
+    box-shadow:0px 6px 12px 0px rgba(63,62,57,0.06);
+    font-size: 36px;
+    font-weight: 500px;
+    line-height: 64px;
+    color: $t1;
+    z-index: 2;
+    position: relative;
+    .month {
+    	font-size: 14px;
+    	color: $t2;
+    }
+
+}
+
+.load_more {
+	margin: 40px 0 40px 0;
+	text-align: center;
+	.button {
+        text-align: center;
+	    background: $white;
+	    width: 198px;
+        height: 64px;
+        box-shadow: 0px 6px 12px 0px rgba(63,62,57,0.06);
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 500;
+        color: $t1;
+        line-height: 64px;
+        transition: all .3s ease-in-out;
+        &:hover {
+        	cursor: pointer;
+        	box-shadow: 0px 8px 20px 0px rgba(63,62,57,0.1);
+        }
+    }
+}
+
+footer {
+	height: 120px;
+    background: rgba(231,230,224,1);
+    font-size: 14px;
+    font-weight: 400;
+    color: $t2;
+    text-align: center;
+    line-height:120px;
+}
+
+@media only screen and (max-width: 768px) {
+	.main_header {
+	margin: 40px 0;
+	
+}
+
+.logo {
+	display: block;
+    margin: 0 auto;
+    text-align: center;
+	img {
+        float: none;
+	}
+	h1 {
+		float: none;
+		margin: 0; 
+		color: $t1;
+		font-size: 20px;
+		font-weight: 400;
+		margin-top: 12px;
+	}
+}
+
+.nav {
+	
+	margin-top: 32px;
+	float: none;
+	text-align: center;
+	font-size:14px;
+    font-weight:400;
+    line-height:20px;
+    a {
+    	margin-right: 20px;
+    	color: $t2;
+    	text-decoration: none;
+    }
+    .pressed {
+        font-weight: 700;
+    	color: $t1;
+    }
+}
+
+}
+
+@media only screen and (max-width: 650px) {
+	#timeline {
+		.listing {
+			.job_type {
+				display: none;
+			}
+		}
+	}
+
+	footer {
+		height: 80px;
+		line-height: 80px;
+	}
+}
